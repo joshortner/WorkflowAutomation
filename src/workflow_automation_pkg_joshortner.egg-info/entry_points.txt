@@ -1,0 +1,3 @@
+[console_scripts]
+cmake-man = workflow_automation.cmake_man:main
+

@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.cfg
+bin/cmd_test.py
+src/workflow_automation/__init__.py
+src/workflow_automation/cmake_man.py
+src/workflow_automation/example.py
+src/workflow_automation_pkg_joshortner.egg-info/PKG-INFO
+src/workflow_automation_pkg_joshortner.egg-info/SOURCES.txt
+src/workflow_automation_pkg_joshortner.egg-info/dependency_links.txt
+src/workflow_automation_pkg_joshortner.egg-info/entry_points.txt
+src/workflow_automation_pkg_joshortner.egg-info/top_level.txt
