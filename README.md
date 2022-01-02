@@ -1,7 +1,5 @@
-# Example Package
+# Workflow Automation Package 
 
-This is a simple example package. You can use
-[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+This package contains scripts to automate some of the things I find myself doing often.
 
-## Source: https://packaging.python.org/en/latest/tutorials/packaging-projects/
+## cmake-man

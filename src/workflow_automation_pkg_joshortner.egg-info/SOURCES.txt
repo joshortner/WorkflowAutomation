@@ -1,7 +1,6 @@
 README.md
 pyproject.toml
 setup.cfg
-bin/cmd_test.py
 src/workflow_automation/__init__.py
 src/workflow_automation/cmake_man.py
 src/workflow_automation/example.py

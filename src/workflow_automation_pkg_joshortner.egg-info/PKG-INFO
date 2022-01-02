@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: workflow-automation-pkg-joshortner
-Version: 0.0.15
+Version: 0.0.16
 Summary: Automation for some personal workflows
 Home-page: https://github.com/joshortner/WorkflowAutomation
 Author: Josh Ortner
@@ -14,12 +14,10 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 
-# Example Package
+# Workflow Automation Package 
 
-This is a simple example package. You can use
-[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+This package contains scripts to automate some of the things I find myself doing often.
 
-## Source: https://packaging.python.org/en/latest/tutorials/packaging-projects/
+## cmake-man
 
 
