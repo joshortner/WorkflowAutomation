@@ -38,7 +38,7 @@ C:/path/to/my_project
     └───my_project
 ```
 
-Build a CMake Project. This will add a "build" directory and generate files for the systems default compilation tools.
+Build a CMake Project. This will add a "build" directory and generate files for the system's default compilation tools.
 
 ```bash
 cmake-man --build
