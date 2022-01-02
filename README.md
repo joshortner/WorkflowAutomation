@@ -27,13 +27,15 @@ cmake-man --init --lang c
 Project Structure:
 
 ```bash
-|---<project_name>
-	|--- CMakeLists.txt
-	|--- lib
-	|--- src
-		|--- main.<lang>
-		|--- <project_name>.h
-		|--- <project_name>
+C:/path/to/my_project
+│   CMakeLists.txt
+│
+├───lib
+└───src
+    │   main.<lang>
+    │   my_project.h
+    │
+    └───my_project
 ```
 
 Build a CMake Project. This will add a "build" directory and generate files for the systems default compilation tools.
