@@ -1,10 +1,10 @@
 # Workflow Automation Package 
 
-This package contains scripts to automate some of the things I find myself doing often.
+This package contains programs to automate some of the things I find myself doing often.
 
 ## cmake-man
 
-cmake-man is a CLI program to manage CMake projects without having to hand-edit a CMakeLists. Its based off of my personal CMake Project setup which is described below.
+cmake-man is a CLI program to manage CMake projects without having to hand-edit a CMakeLists.txt. Its based off of my personal experience using CMake. The project structure is defined below.
 
 ### Installation
 
@@ -26,6 +26,7 @@ cmake-man --init --lang c
 
 Project Structure:
 
+```bash
 |---<project_name>
 	|--- CMakeLists.txt
 	|--- lib
@@ -33,7 +34,7 @@ Project Structure:
 		|--- main.<lang>
 		|--- <project_name>.h
 		|--- <project_name>
-
+```
 
 Build a CMake Project. This will add a "build" directory and generate files for the systems default compilation tools.
 
