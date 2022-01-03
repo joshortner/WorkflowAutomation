@@ -4,17 +4,17 @@
 
 This package contains programs to automate some of the things I find myself doing often.
 
-## cmake-man
-
-cmake-man is a CLI program to manage CMake projects without having to hand-edit a CMakeLists.txt. Its based off of my personal experience using CMake. The project structure is defined below.
-
 ### Installation
 
-Use the package manager pip to install cmake-man
+Use the package manager pip to install the workflow-automation package
 
 ```bash
 pip install -i https://test.pypi.org/simple/ workflow-automation-pkg-joshortner
 ```
+
+## cmake-man
+
+cmake-man is a CLI program to manage CMake projects without having to hand-edit a CMakeLists.txt. Its based off of my personal experience using CMake. The functionaality and project structure is defined below.
 
 ### Usage
 
