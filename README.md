@@ -45,3 +45,7 @@ Build a CMake Project. This will add a "build" directory and generate files for 
 ```bash
 cmake-man --build
 ```
+
+## Current Issues:
+- default project header define macro is lower case, should be upper
+- init without lang causes error
