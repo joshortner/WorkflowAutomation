@@ -14,7 +14,7 @@ pip install -i https://test.pypi.org/simple/ workflow-automation-pkg-joshortner
 
 ## cmake-man
 
-cmake-man is a CLI program to manage CMake projects without having to hand-edit a CMakeLists.txt. Its based off of my personal experience using CMake. The functionaality and project structure is defined below.
+cmake-man is a CLI program to manage CMake projects without having to hand-edit a CMakeLists.txt. Its based off of my personal experience using CMake. The functionality and project structure is defined below.
 
 ### Usage
 
@@ -45,7 +45,3 @@ Build a CMake Project. This will add a "build" directory and generate files for 
 ```bash
 cmake-man --build
 ```
-
-## Current Issues:
-- default project header define macro is lower case, should be upper
-- init without lang causes error
