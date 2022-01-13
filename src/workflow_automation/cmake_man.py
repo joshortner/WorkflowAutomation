@@ -11,7 +11,7 @@ import argparse
 import shutil
 import subprocess
 from pathlib import Path
-
+from typing import Optional
 
 def main():
     parser = argparse.ArgumentParser(description="Initialize a CMake project directory")
@@ -24,10 +24,28 @@ def main():
     
     args = parser.parse_args()
 
-    if args.init:
-        initProject(Path.cwd(), args.lang)
-    elif args.build:
-        buildProject(Path.cwd())
+    args.lang = (args.lang is not None) if args.lang else setDefaultLanguage()         
+
+    if args.lang is not None:
+        if args.init:
+            initProject(Path.cwd(), args.lang)
+        elif args.build:
+            buildProject(Path.cwd())
+
+
+def setDefaultLanguage() -> Optional[str]:
+    USER_PROMPT = "No lanugage specified, project will be initialized as a C project is that okay? y/n: "
+    YES = ["y", "yes"]
+    NO  = ["n", "no"]
+
+    answer = input(USER_PROMPT)
+    while answer not in YES and answer not in NO:
+        answer = input(USER_PROMPT)
+
+    if answer in NO:
+        return None
+    else:
+        return "c"
 
 
 def buildProject(directory: Path):
@@ -82,7 +100,7 @@ def initProject(directory: Path, language: str):
             return
 
     else:
-        print(f'Language not supported. Choose one of the following: {SUPPORTED_LANGUAGES}')
+        print(f'Language not supported. Choose one of the following: {[k for k in LANGUAGE_FILES.keys()]}')
         return
 
 
