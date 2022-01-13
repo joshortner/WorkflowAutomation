@@ -1,0 +1,10 @@
+^C:\USERS\JLORT\REPOS\WORKFLOWAUTOMATION\SRC\WORKFLOW_AUTOMATION\TEST\BUILD\CMAKEFILES\4EAADD262BFAAF32AB3D4C9609807E1E\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jlort/Repos/WorkflowAutomation/src/workflow_automation/test -BC:/Users/jlort/Repos/WorkflowAutomation/src/workflow_automation/test/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/jlort/Repos/WorkflowAutomation/src/workflow_automation/test/build/test.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

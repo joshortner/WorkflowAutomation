@@ -24,8 +24,8 @@ def main():
     
     args = parser.parse_args()
 
-    args.lang = (args.lang is not None) if args.lang else setDefaultLanguage()         
-
+    args.lang = args.lang if (args.lang is not None) else setDefaultLanguage()         
+    
     if args.lang is not None:
         if args.init:
             initProject(Path.cwd(), args.lang)
@@ -100,7 +100,7 @@ def initProject(directory: Path, language: str):
             return
 
     else:
-        print(f'Language not supported. Choose one of the following: {[k for k in LANGUAGE_FILES.keys()]}')
+        print(f'Language {language} not supported. Choose one of the following: {[k for k in LANGUAGE_FILES.keys()]}')
         return
 
 
@@ -120,8 +120,8 @@ LANGUAGE_FILES = {
 
         "main": lambda project_name: \
             (
-                f'#include <{project_name}.h>\n\n' +
-                "#include <stdio.h>\n" +
+                f'#include <{project_name}.h>\n' +
+                "#include <stdio.h>\n\n" +
                 f'int main(int argc, char **argv)\n' +
                 "{\n" +
                 '\tprintf("Hello World\\n");\n' +
@@ -134,6 +134,36 @@ LANGUAGE_FILES = {
                 f'#ifndef {project_name.upper()}_H\n' +
                 f'#define {project_name.upper()}_H\n\n' +
                 f'#endif'
+            )
+    },
+
+    "cpp": {
+        "cmake_lists": lambda project_name, language: \
+            (
+                f'cmake_minimum_required(VERSION 3.7.1)\n' +
+                f'set(CMAKE_CXX_STANDARD 17)\n\n' +
+                f'project({project_name})\n\n' +
+                f'set(SRC_DIR ${{CMAKE_CURRENT_SOURCE_DIR}}/src)\n\n' +
+                f'include_directories(\n\t${{SRC_DIR}}\n)\n\n' +
+                f'file(\n\tGLOB SOURCES\n\t${{SRC_DIR}}/main.{language}\n)\n\n' +
+                f'add_executable(\n\t${{PROJECT_NAME}}\n\t${{SOURCES}}\n)\n\n' +
+                f'#target_link_libraries(\n#\t${{PROJECT_NAME}}\n#\t<lib>\n#)'
+            ),
+
+        "main": lambda project_name: \
+            (
+                f'#include <{project_name}.h>\n' +
+                "#include <iostream>\n\n" +
+                f'int main(int argc, char **argv)\n' +
+                "{\n" +
+                '\tstd::cout << "Hello world" << std::endl;\n' +
+                f'\treturn 0;\n'
+                "}\n"
+            ),
+
+        "main_include": lambda project_name: \
+            (
+                f'#pragma once\n'
             )
     }
 }
