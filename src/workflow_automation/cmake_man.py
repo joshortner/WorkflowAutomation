@@ -113,8 +113,8 @@ LANGUAGE_FILES = {
 
         "main_include": lambda project_name: \
             (
-                f'#ifndef {project_name}_H\n' +
-                f'#define {project_name}_H\n\n' +
+                f'#ifndef {project_name.upper()}_H\n' +
+                f'#define {project_name.upper()}_H\n\n' +
                 f'#endif'
             )
     }
